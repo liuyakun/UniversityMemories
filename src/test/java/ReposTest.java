@@ -1,7 +1,5 @@
 import com.incar.gitApi.Application;
-import com.incar.gitApi.GithubClientConfig;
 import com.incar.gitApi.service.*;
-import com.incar.gitApi.util.DateUtil;
 import org.eclipse.egit.github.core.*;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -11,10 +9,6 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 
 import java.io.IOException;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 /**

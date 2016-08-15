@@ -1,7 +1,6 @@
 import com.incar.gitApi.Application;
 import com.incar.gitApi.entity.GitResult;
 import com.incar.gitApi.repository.GitResultRepository;
-import com.incar.gitApi.util.GitRetUtil;
 import org.eclipse.egit.github.core.Issue;
 import org.eclipse.egit.github.core.Milestone;
 import org.eclipse.egit.github.core.Repository;
