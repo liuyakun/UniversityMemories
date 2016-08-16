@@ -34,11 +34,11 @@ requirejs.config({
 require
 (
     [
-        'angular','ba','../viewBA/indexCtrl','../script/service/baService','../script/filter/filterBA'
+        'angular','app','../viewBA/indexCtrl','../script/service/baService','../script/filter/filterBA'
     ],
     function(angular)
     {
-        angular.bootstrap(document, ['ba']);
+        angular.bootstrap(document, ['app']);
     }
 );
 
