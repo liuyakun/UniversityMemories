@@ -1,31 +1,5 @@
-#server
-github:
-     username:
-     password:
-     repos:
-        - HP-Enterprise/Rental653
-        - HP-Enterprise/BriAir
-        - HP-Enterprise/Triclops
-        - HP-Enterprise/SMS
-        - HP-Enterprise/Training
-        - HP-Enterprise/DataCenter
-        - HP-Enterprise/MessageProcessor
-        - HP-Enterprise/IncarSelf
-        - HP-Enterprise/TcpServer
-        - HP-Enterprise/Android-BlueTooth
-        - HP-Enterprise/IOS-BlueTooth
-        - HP-Enterprise/JPA-Generator
-        - InCar/Android-BlueTooth
-        - InCar/IOS-BlueTooth
-        - InCar/demo
-        - InCar/Alikula
-        - InCar/IncarSelf
-        - InCar/ali-mns
-        - InCar/cnpmjs.org
-        - InCar/Track
-        - HP-Enterprise/RentalBA
 # Tomcat
-server.port: 7777
+server.port: 1101
 # Logging level (TRACE, DEBUG, INFO, WARN, ERROR, FATAL, OFF)
 logging:
     level:
@@ -35,10 +9,12 @@ logging:
 # Spring settings
 spring:
     profiles.active: dev
+    freemarker.cache: true
+    resources.cache-period: 7200
     datasource:
-        url: jdbc:mysql://localhost:3306/gitApi?characterEncoding=utf8
+        url: jdbc:mysql://localhost:3306/universityMemories?characterEncoding=utf8
         username: root
-        password: zhangfan
+        password: root
     jpa:
         show-sql: false
         hibernate:
@@ -47,3 +23,6 @@ spring:
             naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
             properties:
                 hibernate.dialect: org.hibernate.dialect.MySQL5Dialect
+      redis:
+          host: 127.0.0.1
+          database: 2

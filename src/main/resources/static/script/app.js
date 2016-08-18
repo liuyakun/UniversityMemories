@@ -34,7 +34,7 @@ requirejs.config({
 require
 (
     [
-        'angular','app','../viewBA/indexCtrl','../script/service/baService','../script/filter/filterBA'
+        'angular','app','../view/indexCtrl','../script/service/commonService','../script/filter/filter'
     ],
     function(angular)
     {
