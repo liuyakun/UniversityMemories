@@ -14,26 +14,38 @@
 
 </head>
 <body ng-controller="indexCtrl as ic">
-        <div align="center">
-            <h1>此项目由张益达张总投资，敬请期待！</h1>
+        <ul class="nav nav-pills">
+            <li role="presentation" ng-class="{active:mainMenuIndex==0}"><a href="/" ng-click="changeMainMenu(0)">Home</a></li>
+            <li role="presentation" ng-class="{active:mainMenuIndex==1}"><a href="/web/test001" ng-click="changeMainMenu(1)">test001</a></li>
+            <li role="presentation" ng-class="{active:mainMenuIndex==2}"><a href="#" ng-click="changeMainMenu(2)">Messages</a></li>
+        </ul>
+
+        <div class="hide userList" ng-show="isHome">
+            <div align="center">
+                <h1>此项目由张益达张总投资，敬请期待！</h1>
+            </div>
+
+            <div>
+                <table class="table table-bordered">
+                    <tr>
+                        <td>ID</td>
+                        <td>姓名</td>
+                        <td>地址</td>
+                        <td>电话</td>
+                    </tr>
+                    <tr ng-repeat="u in ic.userList">
+                        <td ng-bind="u.id"></td>
+                        <td ng-bind="u.name"></td>
+                        <td ng-bind="u.address"></td>
+                        <td ng-bind="u.phone"></td>
+                    </tr>
+                </table>
+            </div>
         </div>
 
-        <div class="hide userList">
-            <table class="table table-bordered">
-                <tr>
-                    <td>ID</td>
-                    <td>姓名</td>
-                    <td>地址</td>
-                    <td>电话</td>
-                </tr>
-                <tr ng-repeat="u in ic.userList">
-                    <td ng-bind="u.id"></td>
-                    <td ng-bind="u.name"></td>
-                    <td ng-bind="u.address"></td>
-                    <td ng-bind="u.phone"></td>
-                </tr>
-            </table>
-        </div>
+
+
+        <div ng-view="" ></div>
 </body>
 
 

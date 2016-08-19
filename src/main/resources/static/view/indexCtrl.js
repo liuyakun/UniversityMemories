@@ -1,6 +1,26 @@
 define(['../script/um','jquery','../script/service/userService'],function(module, $,UserService){
     module.controller("indexCtrl",function($rootScope,$scope,$http,$resource,$location,commonService,$route,$timeout) {
         console.log("欢迎加入");
+
+
+        //初始化路径
+        $rootScope.$on('$locationChangeSuccess', function (e) {
+            $rootScope.path = $location.path();
+            if ($rootScope.path === '/' || $rootScope.path.length === 0) {
+                $rootScope.isHome = true;
+                //$("#home").removeClass("hide");
+                $rootScope.mainMenuIndex = 0; //主菜单索引
+                $(".userList").removeClass("hide");
+            } else {
+                $rootScope.isHome = false;
+            }
+        });
+
+        $rootScope.changeMainMenu = function(index){
+            $rootScope.mainMenuIndex = index;
+        };
+
+
         //通过条件查询用户
         var userService = new UserService($resource);
         this.userList = [];
@@ -14,7 +34,6 @@ define(['../script/um','jquery','../script/service/userService'],function(module
                 console.log(JSON.stringify(data));
                 if(data.status != 'true') return;
                 _this.userList = data.message;
-                $(".userList").removeClass("hide");
             });
         };
         this.getUserList();
