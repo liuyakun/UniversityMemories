@@ -7,11 +7,18 @@
 .gradle/
 .idea/
 .vscode/
-out/
 
 node_modules/
-/src/*/resources/static/lib/
+src/main/resources/static/script/lib/
 build/
+snapshoot/
 /*.properties
 /src/*/resources/application-*.properties
 /src/*/resources/application-*.yml
+/src/*/resources/messages.properties
+/src/*/resources/*_zh_CN.properties
+
+src/main/java/com/hpe/GitVer.java
+src/main/resources/static/css/mgr/manager.css
+src/main/resources/static/css/mgr/manager.css.map
+src/main/resources/static/testInte/config-dev.js
