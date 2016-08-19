@@ -1,3 +1,23 @@
+# universityMemories
+电气1101门户
+
+[![Build Status](https://travis-ci.com/HP-Enterprise/Rental653.svg?token=yhaDoVuR6YmAkdqD6vth&branch=dev)](https://travis-ci.com/HP-Enterprise/Rental653)
+
+## 前提条件
+- [Git 1.9+](http://git-scm.com/downloads)
+- [JDK 1.8+](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
+- [Gradle 2.5+](http://gradle.org/gradle-download/)
+- [nvm 1.1+](https://github.com/creationix/nvm)
+
+### 前提条件 - 环境配置
+执行以下命令,确认版本符合前提条件中指定的要求
+```SHELL
+git --version
+java -version
+gradle --version
+nvm version
+```
+
 ### 前提条件 - node
 从 http://coreybutler.github.io/nodedistro/ 查询可供使用的node版本(建议使用node 4.2+)
 执行以下命令配置node环境
@@ -21,12 +41,19 @@ npm install -g bower gulp karma-cli --registry=http://registry.npm.taobao.org
 npm install --registry=http://registry.npm.taobao.org
 ```
 
+### 前提条件 - PhantomJS
+集成测试依赖于[PhantomJS](http://phantomjs.org). 安装好后,配置环境变量,使下面的命令能够执行
+```SHELL
+phantomjs --version
+```
+执行`npm run test`会执行集成测试
+
 ### 检测是否缺少依赖组件
 随着开发的进展,其它开发人员会添加新的依赖项,如果缺少依赖项,程序就无法正常工作
 执行以下命令检测是否缺少依赖项
 ```SHELL
 npm ls --depth=0 #检测packages.json依赖
-bower ls -o #检测bower.json依赖
+bower ls -o #检测boweer.json依赖
 ```
 
 
@@ -42,13 +69,27 @@ gradle -Dspring.profiles.active=product bootRun
 - 单元测试时 $/src/test/resources/application-product.yml 将被激活.
 - 没有在`application-product.yml`里定义的配置,会继承`application.yml`里的定义.
 
+如果连接到maven.org速度较慢,则可以使用maven.oschina.net的中国区镜像
+```SHELL
+gradle -Pmaven=maven.oschina.net
+```
+
 ## 数据库初始化命令
 创建数据库和用户
 ```SHELL
 mysql -u root -p -h 127.0.0.1 -e 'CREATE DATABASE rental CHARACTER SET = utf8;'
 mysql -u root -p -h 127.0.0.1 -e 'CREATE USER javapp@localhost IDENTIFIED BY 'p@ssw0rd';'
 mysql -u root -p -h 127.0.0.1 -e 'GRANT ALL ON rental.* TO javapp@localhost;'
+mysql -u root -p -h 127.0.0.1 -e 'GRANT FILE ON *.* TO javapp@localhost;'
 ```
+
+数据库初始化需要在`$/gradle.properties`中配置数据库连接,请参考示例文件`$/gradle-sample.properties`
+```SHELL
+    gradle flywayMigrate #迁移数据库并且自动创建数据库的表
+    gradle flywayInfo #打印所有迁移的表的详细信息和状态信息
+    gradle flywayClean #删除数据库中所有的表
+```
+可在 http://flywaydb.org/documentation/gradle/ 链接查看更多具体用法
 
 ### flyway创建SQL脚本的文件命名规则
 ```
@@ -56,11 +97,8 @@ V<VERSION>__<NAME>.sql，<VERSION>可以写成1 或者 2_1或者3.1
 <VERSION>规定写成日期.序号,例如:20160113.1
 ```
 
-
 ## 运行
 ```SHELL
 gradle bootRun
 ```
 
-     username: travis4hpe
-     password: travis4Java
