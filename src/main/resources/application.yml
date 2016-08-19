@@ -23,6 +23,3 @@ spring:
             naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
             properties:
                 hibernate.dialect: org.hibernate.dialect.MySQL5Dialect
-      redis:
-          host: 127.0.0.1
-          database: 2
