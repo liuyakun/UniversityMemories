@@ -1,5 +1,5 @@
 
-define(['script/app'],function(module){
+define(['../um'],function(module){
 
     return module.service('commonService', (function(){
         function commonService($http,$resource,$timeout,$location){

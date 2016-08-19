@@ -3,7 +3,7 @@
  */
 define(['angular','routes','../script/service/dependencyResolverFor','angularResource','angularRoute','bootstrap','bootstrapDateTimePicker','bootstrapDateTimePickerCN','zTreeCore','zTreeExcheck'], function(angular,config, dependencyResolverFor)
 {
-    var app = angular.module('app', [ 'ngResource', 'ngRoute']);
+    var app = angular.module('um', [ 'ngResource', 'ngRoute']);
     app.config(
         [
             '$routeProvider',

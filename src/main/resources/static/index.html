@@ -5,15 +5,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>电气专1101门户</title>
+    <title>电气1101门户</title>
+
+    <link href="/script/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/script/lib/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
 
     <base href="/index.html" />
 
 </head>
 <body ng-controller="indexCtrl as ic">
-        <span>此项目由张益达张总投资，敬请期待！</span>
+        <div align="center">
+            <h1>此项目由张益达张总投资，敬请期待！</h1>
+        </div>
+
+        <div class="hide userList">
+            <table class="table table-bordered">
+                <tr>
+                    <td>ID</td>
+                    <td>姓名</td>
+                    <td>地址</td>
+                    <td>电话</td>
+                </tr>
+                <tr ng-repeat="u in ic.userList">
+                    <td ng-bind="u.id"></td>
+                    <td ng-bind="u.name"></td>
+                    <td ng-bind="u.address"></td>
+                    <td ng-bind="u.phone"></td>
+                </tr>
+            </table>
+        </div>
 </body>
 
 
-<script data-main="/script/appBA.js" src="/script/lib/requirejs/require.min.js"></script>
+<script data-main="/script/app.js" src="/script/lib/requirejs/require.min.js"></script>
 </html>

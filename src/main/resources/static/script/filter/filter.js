@@ -1,7 +1,7 @@
 /**
  * Created by Administrator on 2016/2/25.
  */
-define(['../app'],function(module){
+define(['../um'],function(module){
     module.filter('sexType',function(){
         return function(input) {
             var sexType = "";
@@ -10,4 +10,5 @@ define(['../app'],function(module){
             return sexType;
         }
     });
+    
 });

@@ -34,11 +34,11 @@ requirejs.config({
 require
 (
     [
-        'angular','app','../view/indexCtrl','../script/service/commonService','../script/filter/filter'
+        'angular','um','../view/indexCtrl','../script/service/commonService','../script/filter/filter'
     ],
     function(angular)
     {
-        angular.bootstrap(document, ['app']);
+        angular.bootstrap(document, ['um']);
     }
 );
 
