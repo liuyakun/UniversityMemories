@@ -12,7 +12,7 @@ spring:
     freemarker.cache: true
     resources.cache-period: 7200
     datasource:
-        url: jdbc:mysql://localhost:3306/universityMemories?characterEncoding=utf8
+        url: jdbc:mysql://localhost:3306/universityMemories?characterEncoding=utf8&useSSL=true
         username: root
         password: root
     jpa:
