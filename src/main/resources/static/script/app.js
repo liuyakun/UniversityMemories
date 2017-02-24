@@ -9,10 +9,7 @@ requirejs.config({
         md5:"/script/lib/js-md5/js/md5.min",
         bootstrapDateTimePicker:"/script/lib/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min",
         bootstrapDateTimePickerCN:"/script/lib/bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN",
-        flot:"/script/lib/flot/jquery.flot",
-        sceditor: "/script/lib/SCEditor/minified/jquery.sceditor.bbcode.min",
-        zTreeCore: "/script/lib/zTree_v3/js/jquery.ztree.core.min",
-        zTreeExcheck: "/script/lib/zTree_v3/js/jquery.ztree.excheck.min",
+        flot:"/script/lib/flot/jquery.flot"
     },
     shim:{
         jquery: { exports: '$' },
@@ -23,10 +20,7 @@ requirejs.config({
         ajaxfileupload:['jquery'],
         bootstrapDateTimePicker:['bootstrap'],
         bootstrapDateTimePickerCN:['bootstrapDateTimePicker'],
-        flot:['jquery'],
-        sceditor: ['jquery'],
-        zTreeCore: ['jquery'],
-        zTreeExcheck: ['jquery','zTreeCore']
+        flot:['jquery']
     }
 });
 

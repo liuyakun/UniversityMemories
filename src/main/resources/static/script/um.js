@@ -1,7 +1,7 @@
 /**
  * Created by 刘亚坤 on 2016/8/16.
  */
-define(['angular','routes','../script/service/dependencyResolverFor','angularResource','angularRoute','bootstrap','bootstrapDateTimePicker','bootstrapDateTimePickerCN','zTreeCore','zTreeExcheck'], function(angular,config, dependencyResolverFor)
+define(['angular','routes','../script/service/dependencyResolverFor','angularResource','angularRoute','bootstrap','bootstrapDateTimePicker','bootstrapDateTimePickerCN'], function(angular,config, dependencyResolverFor)
 {
     var app = angular.module('um', [ 'ngResource', 'ngRoute']);
     app.config(
